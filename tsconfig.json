@@ -18,7 +18,12 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "baseUrl": ".",
-    "allowUmdGlobalAccess": true
+    "allowUmdGlobalAccess": true,
+    "paths": {
+      "@/components/*": [
+        "components/*"
+      ]
+    }
   },
   "include": [
     "next-env.d.ts",
@@ -26,6 +31,6 @@
     "**/*.tsx"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
   ]
 }
