@@ -29,7 +29,7 @@ yarn e2etest
 
 ### Production:
 ```bash
-yarn Build
+yarn build
 ```
 
 ## DATA
