@@ -1,34 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## !!! THIS PROJECT IS UNDER CONSTRUCTION - Use at your own risk! 
+
+# NEXT-TYPED-APOLLO-RA
+
+This project is an example of how to use the [React Admin](https://marmelab.com/react-admin/) dataProvider to inject queried data via Apollo Client and GraphQL into the RA dashboard. The Example shows how to Paginate, Order, Sort and Filter data.
+
+### The project is built using Typescript, NextJS/React, React Admin, Apollo Client, GraphQL, React Testing Library, Jest and Cypress.
+----------------------------------------------------------------------------------------------
+
 
 ## Getting Started
 
-First, run the development server:
+### Dev:
 
 ```bash
-npm run dev
-# or
 yarn dev
 ```
+Open [http://localhost:3010](http://localhost:3010) with your browser to see the result.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Unit test:
+```bash
+yarn test
+```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### e2e test:
+```bash
+yarn e2etest
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.tsx`.
+### Production:
+```bash
+yarn Build
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## DATA
 
-## Learn More
+The data is taken from the Open graphQL of Space X: https://api.spacex.land/graphql/
 
-To learn more about Next.js, take a look at the following resources:
+React Admin uses a dataProvider.ts file as a type of API adapter mapping calls to different functions that resolve promises and return data (or errors). 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+See "/react-admin/provider.ts" to see how getList will perform a Apollo Client query and return the data to React Admin.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The past missions are display in using a Data Grid template component (*see "/components/missions"), allowing the user to search, sort, order and filter the data within the table that React Admin generates.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

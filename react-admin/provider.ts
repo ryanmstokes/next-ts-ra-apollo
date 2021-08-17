@@ -32,7 +32,7 @@ export default {
      * of the queries/schema matches what RA expects). 
      * */
 
-    getList: async (resource: string, params: Params) => {
+    getList: async (resource: string, params: any) => {
 
         //** Get the params object passed by RA to the function to use for filtering,sorting and ordering */
         const { page, perPage } = params.pagination;
@@ -45,7 +45,7 @@ export default {
          * of graphQL where they do not want unknown variables beinng delivered, only what you request specifically.
          * see: https://stackoverflow.com/questions/34199982/how-to-query-all-the-graphql-type-fields-without-writing-a-long-query 
         */
-        const query = gql`query LaunchesPast($limit:Int, $offset:Int, $sort:String, $order:String, $filterMissionName:String, $filterYear:String){
+        const query = gql`query LaunchesPast($limit:Int, $offset:Int, $sort:String, $order:String, $filterMissionName:String, $filterYear:String ){
                             launchesPast(limit:$limit, offset:$offset, sort:$sort, order: $order, find: {mission_name: $filterMissionName, launch_year: $filterYear}) {
                                 id,
                                 mission_name,
@@ -69,6 +69,11 @@ export default {
 
         return { data: result.data.launchesPast, total: 50 };
     },
+
+
+
+    /************************************************************************************ */
+
 
 
     /** IGNORE: Everything from here is the default boilerplate for REST providers */

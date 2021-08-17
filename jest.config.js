@@ -3,5 +3,6 @@ module.exports = {
     moduleNameMapper: {
         "^@components(.*)$": "<rootDir>/components$1"
     },
-    moduleDirectories: ['node_modules', '<rootDir>']
+    moduleDirectories: ['node_modules', '<rootDir>'],
+    testPathIgnorePatterns: ["<rootDir>/cypress/"]
 };

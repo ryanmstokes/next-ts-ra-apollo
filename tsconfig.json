@@ -23,7 +23,10 @@
       "@/components/*": [
         "components/*"
       ]
-    }
+    },
+    "types": [
+      "cypress"
+    ]
   },
   "include": [
     "next-env.d.ts",
