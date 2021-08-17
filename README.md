@@ -1,6 +1,6 @@
 ## !!! THIS PROJECT IS UNDER CONSTRUCTION - Use at your own risk! 
 
-# NEXT-TYPED-APOLLO-RA
+# NEXT-TS-RA-APOLLO
 
 This project is an example of how to use the [React Admin](https://marmelab.com/react-admin/) dataProvider to inject graphQL queried data via [Apollo Client](https://www.apollographql.com/docs/react/) into the RA dashboard. The Example shows how to Paginate, Order, Sort and Filter data.
 
