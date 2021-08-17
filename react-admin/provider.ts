@@ -17,18 +17,24 @@ const client = new ApolloClient({
 
 const httpClient = fetchUtils.fetchJson;
 
+/**
+ * React-Admin dataProvider
+ * see: https://marmelab.com/react-admin/DataProviders.html
+ * @returns 
+ */
+
 export default {
 
 
     /** !!: We are hijacking this initially for the first query - It seems with graphQL it would be difficult to make this getList and the RA provider system
-     * dynamic like graphQL requiring object fields to be defined in the quuery and the fact that graphQL frowns upon constructing queries with strign concatonation.
+     * dynamic like graphQL requiring object fields to be defined in the quuery and the fact that graphQL frowns upon constructing queries with string concatonation.
      * Nevertheless other data-ra-graphql and similar libraries acheive this with introspection (and I presume recursion and subsequent queries) somehow (*if the shape 
      * of the queries/schema matches what RA expects). 
      * */
 
     getList: async (resource: string, params: Params) => {
 
-        s        //** Get the params object passed by RA to the function to use for filtering,sorting and ordering */
+        //** Get the params object passed by RA to the function to use for filtering,sorting and ordering */
         const { page, perPage } = params.pagination;
         const { field, order } = params.sort;
 

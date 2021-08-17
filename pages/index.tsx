@@ -1,10 +1,8 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from 'styles/Home.module.css'
-import ClientOnly from "components/client-only"
+import ClientOnly from "components/client-only/"
 import Missions from 'components/missions/';
 import { Admin, Resource } from 'react-admin';
-import dataProvider from 'provider'
+import dataProvider from 'react-admin/provider'
+
 /**
  * Home Page
  * @returns rendered React-Admin Dashboard
