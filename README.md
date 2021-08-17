@@ -2,7 +2,7 @@
 
 # NEXT-TYPED-APOLLO-RA
 
-This project is an example of how to use the [React Admin](https://marmelab.com/react-admin/) dataProvider to inject queried data via Apollo Client and GraphQL into the RA dashboard. The Example shows how to Paginate, Order, Sort and Filter data.
+This project is an example of how to use the [React Admin](https://marmelab.com/react-admin/) dataProvider to inject graphQL queried data via [Apollo Client](https://www.apollographql.com/docs/react/) into the RA dashboard. The Example shows how to Paginate, Order, Sort and Filter data.
 
 ### The project is built using Typescript, NextJS/React, React Admin, Apollo Client, GraphQL, React Testing Library, Jest and Cypress.
 ----------------------------------------------------------------------------------------------
@@ -37,6 +37,8 @@ yarn Build
 The data is taken from the Open graphQL of Space X: https://api.spacex.land/graphql/
 
 React Admin uses a dataProvider.ts file as a type of API adapter mapping calls to different functions that resolve promises and return data (or errors). 
+
+### See https://marmelab.com/react-admin/DataProviders.html for more info on dataProviders
 
 See "/react-admin/provider.ts" to see how getList will perform a Apollo Client query and return the data to React Admin.
 
