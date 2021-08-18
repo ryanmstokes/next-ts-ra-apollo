@@ -9,11 +9,26 @@ import dataProvider from 'react-admin/provider'
  */
 const Home = () => {
 
+  const missions = {
+    title: "Launches",
+    query: 'launchesPast',
+    props: [
+      { name: 'id', type: 'ID' },
+      { name: 'mission_name', type: 'String' },
+      { name: 'launch_year', type: 'String' }
+    ]
+  }
+
   return (
     <div>
+      <div>Admin/Missions</div>
       <ClientOnly>
         <Admin dataProvider={dataProvider as any}>
-          <Resource name="graphql" list={Missions} />
+          <Resource
+            name="graphql"
+            list={Missions}
+            options={{ query: missions.query, props: missions.props }}
+          />
         </Admin>
       </ClientOnly>
     </div>
